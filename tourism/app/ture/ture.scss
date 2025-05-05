@@ -1,0 +1,99 @@
+$primary-color: #2c3e50;
+$background-color: #f4f4f9;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+#ture-info {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: $background-color;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px $shadow-color;
+    text-align: center;
+
+    h2 {
+        font-size: 32px;
+        color: $primary-color;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+   
+}
+
+#tabela-ture{
+    border: 1px r;
+    width: 100%;
+    border-collapse: collapse;       
+    thead{
+        tr{
+            td{
+                border: 1px black solid;
+                height: 40px;
+                background-color: lightgrey;
+            }
+        }
+    }
+}
+
+#body-tabeleTura{
+    tr{        
+        td{
+            border: 1px black solid;
+            height: 30px;
+            font-weight: bold;            
+        }
+    }
+}
+/////////////////////////////////////////////
+#detalji-info{
+    display: none;
+
+    h2{
+        margin-bottom: 20px;
+    }
+}
+
+#tabela-detalji{
+    border: 1px black solid;
+    width: 100%;    
+    border-collapse: collapse;
+    padding: 20px;     
+    table-layout: fixed; 
+}
+
+#body-tabeleDetalji{
+    
+    overflow-wrap: break-word; // Modern alternative
+    tr{
+        td{
+            text-align: left;      
+            text-overflow: ellipsis;      
+        }
+    }
+}
+
+.detalji-prva-kolona{
+    text-align: left;
+    font-weight: bold;
+    width: 30%;    
+    padding: 10px;    
+    padding-left: 20px;
+}
+
+#detalji-info {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: $background-color;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px $shadow-color;
+    text-align: center;   
+}
+
+.ture-item {
+    margin-bottom: 20px;
+}
+
