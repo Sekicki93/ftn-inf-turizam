@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 class Tura {
     constructor(naziv, opis, duzinaKm, tagovi) {
         this.naziv = naziv;
@@ -175,4 +174,4 @@ function fokusirajInput() {
 
 // Inicijalizacija kada se DOM učita
 document.addEventListener('DOMContentLoaded', inicijalizujTure);
->>>>>>> my-temporary-work
+
