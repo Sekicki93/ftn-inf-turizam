@@ -16,7 +16,9 @@
             </ul>
         </nav>
 
-        <div id="ture-info">
+        <div id="main-container">
+
+            <div id="ture-info">
             <h2>Ture Informacije</h2>
             <div class="ture-item">
                 <table id="tabela-ture">
@@ -32,6 +34,29 @@
                 </table>
             </div>
         </div>
+
+        <div id="ture-submit">
+            <h2>Dodaj Turu</h2>
+            <form id="ture-forma">
+                <fieldset>
+                    <legend>Informacije o Turi</legend>
+                    <label for="name">Naziv Ture:</label>
+                    <input type="text" id="name" name="name" required />
+                    <label for="opis">Opis ture:</label>
+                    <textarea id="opis" name="opis" required></textarea>
+                    <label for="duzinaTure">Duzina ture:</label>
+                    <input type="text" id="duzinaTure" name="duzinaTure" required />
+                    <div class="tag-container" id="tagContainer" onclick="fokusirajInput()">
+                    <input type="text" class="tag-input" id="tagInput" placeholder="Dodaj tag" onkeydown="obradiTaster(event)">
+                    </div>
+                    <input type="submit" value="Submit" />                    
+                </fieldset>
+            </form>
+        </div>
+
+        </div>
+
+        
 
         <div id="detalji-info">
             <h2 id="nazivTure"></h2>
@@ -44,22 +69,7 @@
             </div>
         </div>
 
-        <div id="ture-info">
-            <h2>Ture Informacije</h2>
-            <div class="ture-item">
-                <table id="tabela-ture">
-                    <thead>
-                        <tr>
-                            <td>Naziv</td>
-                            <td>Duzina ture</td>
-                        </tr>
-                    </thead>
-                    <tbody id="body-tabeleTura">
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        
            
     </body>
     <script src="ture.js"></script>
