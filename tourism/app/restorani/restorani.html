@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="../../dist/restorani/restorani.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="title">TourApp</h1>
+        <ul class="nav-links">
+            <li><a href="../../app/contact/contact.html">Kontakt</a></li>
+            <li><a href="../ture/ture.html">Ture</a></li>
+            <li><a href="restorani.html">Restorani</a></li>
+        </ul>
+    </nav>
+
+    <div id="restorani-info">
+        <h2>Restorani Informacije</h2>
+        <div class="restoran-item">
+            <table id="tabela-restorani">
+                <thead>
+                    <tr>
+                        <td>Naziv</td>
+                        <td>Opis</td>
+                        <td>Tipovi kuhinje</td>
+                    </tr>
+                </thead>
+                <tbody id="body-tabeleRestoran">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="detalji-info">
+        <table id="tabela-detalji">
+            <tbody id="body-tabeleDetalji">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="restorani-info">
+
+        <h2>Dodavanje Restorana</h2>
+        <form id="forma" action="">
+            <div class="restorani-item">
+                <table id="tabela-restorani">
+                    <td>
+                        <label for="naziv">Naziv</label>
+                        <input type="text" id="naziv" name="naziv" required>
+                    </td>
+                    <td>
+                        <label for="opis">Opis</label>
+                        <input type="text" id="opis" name="opis" required>
+                    </td>
+                    <td>
+                        <label for="tipovi">Tipovi kuhinje</label>
+                        <input type="text" id="tipovi" name="tipovi" required>
+                    </td>
+                </table>
+                <button type="button" id="submitBtn">Dodaj</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script src="restorani.js"></script>
+
+</html>
