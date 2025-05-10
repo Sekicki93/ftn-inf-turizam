@@ -1,99 +1,255 @@
+// Variables
 $primary-color: #2c3e50;
 $background-color: #f4f4f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
+$tag-color: #007bff;
+$border-color: #ccc;
 
-#ture-info {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: $background-color;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px $shadow-color;
-    text-align: center;
-
-    h2 {
-        font-size: 32px;
-        color: $primary-color;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: bold;
-    }
-
-   
+// Mixins and Extends
+%card-style {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: $background-color;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px $shadow-color;
+  text-align: center;
 }
 
-#tabela-ture{
-    border: 1px r;
-    width: 100%;
-    border-collapse: collapse;       
-    thead{
-        tr{
-            td{
-                border: 1px black solid;
-                height: 40px;
-                background-color: lightgrey;
-            }
-        }
-    }
+%tag-style {
+  background-color: $tag-color;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  font-family: sans-serif;
+  margin: 2px;
 }
 
-#body-tabeleTura{
-    tr{        
-        td{
-            border: 1px black solid;
-            height: 30px;
-            font-weight: bold;            
-        }
-    }
-}
-/////////////////////////////////////////////
-#detalji-info{
-    display: none;
-
-    h2{
-        margin-bottom: 20px;
-    }
+// Components
+#ture-info, #detalji-info {
+  @extend %card-style;
 }
 
-#tabela-detalji{
-    border: 1px black solid;
-    width: 100%;    
-    border-collapse: collapse;
-    padding: 20px;     
-    table-layout: fixed; 
+#main-container{
+    display: flex;    
+    justify-content: center;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
-#body-tabeleDetalji{
-    
-    overflow-wrap: break-word; // Modern alternative
-    tr{
-        td{
-            text-align: left;      
-            text-overflow: ellipsis;      
-        }
-    }
-}
-
-.detalji-prva-kolona{
-    text-align: left;
+#ture-submit {
+  @extend %card-style;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers horizontally */
+  justify-content: center; /* This centers vertically if needed */
+  
+  h2 {
+    font-size: 32px;
+    color: $primary-color;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-weight: bold;
-    width: 30%;    
-    padding: 10px;    
-    padding-left: 20px;
+    text-align: center; /* Ensure heading is centered */
+    width: 100%; /* Take full width to properly center text */
+  }
+
+  #ture-forma {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* This centers the form horizontally */
+    
+    /* Rest of your form styles... */
+    fieldset {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 0;
+
+      legend {
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding: 0 10px;
+      }
+
+      /* Other form elements... */
+    }
+  }
+}
+
+#ture-info, #ture-submit {
+  h2 {
+    font-size: 32px;
+    color: $primary-color;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
 }
 
 #detalji-info {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: $background-color;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px $shadow-color;
-    text-align: center;   
-}
-
-.ture-item {
+  display: none;
+  
+  h2 {
     margin-bottom: 20px;
+  }
 }
 
+// Tables
+#tabela-ture {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead tr td {
+    border: 1px solid black;
+    height: 40px;
+    background-color: lightgrey;
+  }
+}
+
+#body-tabeleTura tr td {
+  border: 1px solid black;
+  height: 30px;
+  font-weight: bold;
+}
+
+#tabela-detalji {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+  table-layout: fixed;
+}
+
+#body-tabeleDetalji {
+  overflow-wrap: break-word;
+  background-color: #fff;
+  
+  tr td {
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+  }
+
+  #tagovi-display-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    min-height: 40px;
+    align-items: center;
+
+    .tag-display {
+      @extend %tag-style;
+    }
+  }
+}
+
+.detalji-prva-kolona {
+  text-align: left;
+  font-weight: bold;
+  width: 30%;
+  padding: 10px 0 10px 20px;
+}
+
+// Forms
+#ture-forma {
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+
+  fieldset {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0;
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+    }
+  }
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+// Tag System
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid $border-color;
+  padding: 5px;
+  min-height: 40px;
+  cursor: text;
+  align-items: center;
+  gap: 5px;
+
+  .tag {
+    @extend %tag-style;
+    
+    span {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+.tag-input {
+  border: none;
+  outline: none;
+  margin: 5px;
+  font-size: 16px;
+  flex-grow: 1;
+  min-width: 100px;
+}
+
+.tag:hover{
+    background-color: #00aeff;
+}
+
+.ture-item{
+    max-height: 410px;
+    overflow: auto;
+}
